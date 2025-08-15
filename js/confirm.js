@@ -1,5 +1,6 @@
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
+const container = document.querySelector(".confirm-container");
 
 let yesClickCount = 0;
 
@@ -8,7 +9,7 @@ noBtn.addEventListener("click", () => {
     document.body.classList.add("horror");
     setTimeout(() => {
         document.body.classList.remove("horror");
-        window.location.href = "index.html"; // ulang dari awal
+        window.location.href = "index.html";
     }, 5000);
 });
 
@@ -19,8 +20,8 @@ yesBtn.addEventListener("click", () => {
     if (yesClickCount < 6) {
         moveButton();
     } else {
-        // Tombol bergerak bebas selama 5 detik
-        let moveInterval = setInterval(moveButton, 800);
+        // Gerak otomatis selama 5 detik
+        let moveInterval = setInterval(moveButton, 500);
         setTimeout(() => {
             clearInterval(moveInterval);
             yesBtn.style.position = "static";
@@ -33,8 +34,8 @@ yesBtn.addEventListener("click", () => {
 
 function moveButton() {
     yesBtn.style.position = "absolute";
-    const x = Math.random() * (window.innerWidth - yesBtn.offsetWidth);
-    const y = Math.random() * (window.innerHeight - yesBtn.offsetHeight);
+    const x = Math.random() * (container.offsetWidth - yesBtn.offsetWidth - 20);
+    const y = Math.random() * (container.offsetHeight - yesBtn.offsetHeight - 20);
     yesBtn.style.left = `${x}px`;
     yesBtn.style.top = `${y}px`;
 }
