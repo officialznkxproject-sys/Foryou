@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konfirmasi</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/horror.css">
+    <title>Apakah Ini Kamu?</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="confirm.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <h1>Apakah ini kamu? 💖</h1>
-        
-        <!-- GANTI LINK FOTO DI SINI -->
-        <img src="images/pacar.jpg" alt="Foto Pacar" class="photo">
-        
-        <div class="button-group">
-            <button id="yesBtn" class="yes">IYAPSS 💕</button>
-            <button id="noBtn" class="no">TIDAK 🙅</button>
+        <div class="photo-section">
+            <img 
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjz3ZCHqrge_bYHDgA57huvIqDrEkAFePqSg0jVcAHmKNF7ezBkKPydyHnQaBDbEw9P6hFcM4fsfHPMQQkssyzZQYash2XJ0OqJ9s5E39xGpgMGWgMdumde_2Aaw3XQjNoBwYnkQUvCA3pPK8qIXwS3bsEA-2N7ZEzuoJD-Zf7JXpWGUvipmxKaZrol0w/s1270/IMG-20250813-WA0125.jpg" 
+                alt="Foto Pacar" 
+                class="pacar-img"
+                onerror="this.onerror=null;this.src='images/pacar.jpg';"
+            >
+            <h2 class="question">Apakah ini kamu? 💕</h2>
+        </div>
+
+        <div class="buttons">
+            <button id="yesBtn">IYAPSS 😍</button>
+            <button id="noBtn">TIDAK 😱</button>
         </div>
     </div>
-
-    <div id="horrorOverlay" class="hidden">
-        <h2>⚠️ PERINGATAN ⚠️</h2>
-        <p>Jangan bilang bukan kamu... 👻</p>
-    </div>
-
-    <script src="js/confirm.js"></script>
 </body>
-                                                   </html>
+                </html>
