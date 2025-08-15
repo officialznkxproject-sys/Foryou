@@ -1,1 +1,91 @@
+/* style.css */
+/* Tema lucu & imut dengan warna pastel */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #ffe4ec, #fff6f9);
+    color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 2em;
+    color: #ff4f81;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 2px solid #ffb6c1;
+    font-size: 1em;
+    outline: none;
+    width: 80%;
+    margin-bottom: 15px;
+    background-color: #fffafc;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff85a2;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff668a;
+    transform: scale(1.05);
+}
+
+.note {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 15px;
+}
+
+/* Style untuk halaman confirm */
+.photo {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.yes {
+    background-color: #ff85a2;
+}
+
+.no {
+    background-color: #bbb;
+}
