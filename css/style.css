@@ -1,57 +1,45 @@
-body {
-    font-family: 'Comic Sans MS', cursive;
-    background-color: #ffe4f2;
-    text-align: center;
+.confirm-container {
+    position: relative;
+    max-width: 400px;
+    margin: auto;
+    background: #fff0f6;
     padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
 }
 
-.container {
-    max-width: 500px;
-    margin: auto;
+.photo-section {
+    text-align: center;
 }
 
 .pacar-img {
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
     border-radius: 15px;
     border: 4px solid pink;
     box-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
 }
 
-.question {
-    margin-top: 15px;
-    color: #ff1493;
-    font-size: 22px;
-}
-
 .buttons {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
 }
 
-button {
+.yes-btn, .no-btn {
     background-color: #ff69b4;
     color: white;
     border: none;
     padding: 12px 20px;
-    margin: 10px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
+    z-index: 2;
 }
 
-button:hover {
+.yes-btn:hover, .no-btn:hover {
     background-color: #ff1493;
-}
-
-/* Efek horor */
-body.horror {
-    background-color: black;
-    color: red;
-    font-family: 'Creepster', cursive;
-    animation: flicker 0.3s infinite;
-}
-
-@keyframes flicker {
-    0% { background-color: black; }
-    50% { background-color: darkred; }
-    100% { background-color: black; }
-}
+    }
