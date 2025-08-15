@@ -1,63 +1,40 @@
-// confirm.js
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
 
-document.addEventListener("DOMContentLoaded", function () {
-    const yesBtn = document.getElementById("yesBtn");
-    const noBtn = document.getElementById("noBtn");
-    const horrorOverlay = document.getElementById("horrorOverlay");
-    let yesClickCount = 0;
-    let yesMovingInterval = null;
-    let yesLocked = false;
+let yesClickCount = 0;
 
-    // Fungsi untuk memindahkan tombol ke posisi acak
-    function moveYesButton() {
-        const maxX = window.innerWidth - yesBtn.offsetWidth - 20;
-        const maxY = window.innerHeight - yesBtn.offsetHeight - 20;
-        const randomX = Math.floor(Math.random() * maxX);
-        const randomY = Math.floor(Math.random() * maxY);
-
-        yesBtn.style.position = "absolute";
-        yesBtn.style.left = `${randomX}px`;
-        yesBtn.style.top = `${randomY}px`;
-    }
-
-    // Event klik "TIDAK"
-    noBtn.addEventListener("click", function () {
-        document.body.classList.add("horror");
-        horrorOverlay.classList.remove("hidden");
-
-        setTimeout(() => {
-            document.body.classList.remove("horror");
-            horrorOverlay.classList.add("hidden");
-            window.location.href = "index.html";
-        }, 5000);
-    });
-
-    // Event klik "IYAPSS"
-    yesBtn.addEventListener("click", function () {
-        if (yesLocked) return;
-
-        yesClickCount++;
-
-        if (yesClickCount <= 5) {
-            moveYesButton();
-        } else if (yesClickCount === 6) {
-            // Mulai bergerak terus selama 5 detik
-            let duration = 5000;
-            yesLocked = true;
-            yesMovingInterval = setInterval(moveYesButton, 500);
-
-            setTimeout(() => {
-                clearInterval(yesMovingInterval);
-                yesLocked = false;
-                // Pindah-berhenti setiap 2 detik selamanya sampai klik
-                yesMovingInterval = setInterval(() => {
-                    moveYesButton();
-                    setTimeout(() => {}, 2000);
-                }, 2000);
-            }, duration);
-        } else {
-            // Klik terakhir berhasil → pindah ke halaman final
-            window.location.href = "final.html";
-        }
-    });
+// Klik tombol "TIDAK"
+noBtn.addEventListener("click", () => {
+    document.body.classList.add("horror");
+    setTimeout(() => {
+        document.body.classList.remove("horror");
+        window.location.href = "index.html"; // ulang dari awal
+    }, 5000);
 });
+
+// Klik tombol "IYAPSS"
+yesBtn.addEventListener("click", () => {
+    yesClickCount++;
+
+    if (yesClickCount < 6) {
+        moveButton();
+    } else {
+        // Tombol bergerak bebas selama 5 detik
+        let moveInterval = setInterval(moveButton, 800);
+        setTimeout(() => {
+            clearInterval(moveInterval);
+            yesBtn.style.position = "static";
+            yesBtn.addEventListener("click", () => {
+                window.location.href = "final.html";
+            }, { once: true });
+        }, 5000);
+    }
+});
+
+function moveButton() {
+    yesBtn.style.position = "absolute";
+    const x = Math.random() * (window.innerWidth - yesBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - yesBtn.offsetHeight);
+    yesBtn.style.left = `${x}px`;
+    yesBtn.style.top = `${y}px`;
+}
