@@ -1,91 +1,57 @@
-/* style.css */
-/* Tema lucu & imut dengan warna pastel */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    background: linear-gradient(135deg, #ffe4ec, #fff6f9);
-    color: #444;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    font-family: 'Comic Sans MS', cursive;
+    background-color: #ffe4f2;
+    text-align: center;
+    padding: 20px;
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    max-width: 400px;
-    width: 90%;
+    max-width: 500px;
+    margin: auto;
 }
 
-h1 {
-    font-size: 2em;
-    color: #ff4f81;
-    margin-bottom: 15px;
+.pacar-img {
+    width: 250px;
+    border-radius: 15px;
+    border: 4px solid pink;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
 }
 
-.subtitle {
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 20px;
+.question {
+    margin-top: 15px;
+    color: #ff1493;
+    font-size: 22px;
 }
 
-input[type="text"] {
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: 2px solid #ffb6c1;
-    font-size: 1em;
-    outline: none;
-    width: 80%;
-    margin-bottom: 15px;
-    background-color: #fffafc;
+.buttons {
+    margin-top: 20px;
 }
 
 button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    background-color: #ff85a2;
+    background-color: #ff69b4;
     color: white;
-    font-size: 1em;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s;
+    font-size: 18px;
 }
 
 button:hover {
-    background-color: #ff668a;
-    transform: scale(1.05);
+    background-color: #ff1493;
 }
 
-.note {
-    font-size: 0.9em;
-    color: #888;
-    margin-top: 15px;
+/* Efek horor */
+body.horror {
+    background-color: black;
+    color: red;
+    font-family: 'Creepster', cursive;
+    animation: flicker 0.3s infinite;
 }
 
-/* Style untuk halaman confirm */
-.photo {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.yes {
-    background-color: #ff85a2;
-}
-
-.no {
-    background-color: #bbb;
+@keyframes flicker {
+    0% { background-color: black; }
+    50% { background-color: darkred; }
+    100% { background-color: black; }
 }
